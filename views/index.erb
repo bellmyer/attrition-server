@@ -45,8 +45,10 @@
           </table>
           
           <p>
-            <% if settings.game.alive.size > 1 %>
+            <% if settings.game.alive.size > 2 %>
               <a class="btn btn-md btn-success" href="/play" role="button">Play</a>
+            <% else %>
+              <b>The game is done!</b> Once there are only two players left, the outcome is inevitable.<br><br>
             <% end %>
             <a class="btn btn-md btn-danger" href="/reset" role="button">Reset</a>
           </p>
