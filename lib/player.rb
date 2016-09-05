@@ -1,11 +1,14 @@
 require 'httparty'
 
+require './lib/samples/bet_all'
+require './lib/samples/play_safe'
+
 class Player
   attr_reader :ip, :name, :score, :moves
   
   class << self
     def locate
-      list = []
+      list = [BetAll.new, PlaySafe.new]
       
       ip_parts = local_ip.split('.')
       network = ip_parts[0,3].join('.')

@@ -17,6 +17,7 @@
           <table class="table table-striped">
           <thead>
             <tr>
+              <th>Rank</th>
               <th>Player</th>
               <th>Last Move</th>
               <th>Soldiers Remaining</th>
@@ -24,8 +25,9 @@
             </tr>
           </thead>
           <tbody>
-            <% settings.game.sorted.each do |player| %>
+            <% settings.game.sorted.each_with_index do |player, i| %>
               <tr>
+                <td><%= i + 1 %>.</td>
                 <td><%= player.name %></td>
                 <td><%= player.moves.last %></td>
                 <td><%= player.score %></td>
@@ -36,7 +38,9 @@
           </table>
           
           <p>
-            <a class="btn btn-md btn-success" href="/play" role="button">Play</a>
+            <% if settings.game.alive.size > 1 %>
+              <a class="btn btn-md btn-success" href="/play" role="button">Play</a>
+            <% end %>
             <a class="btn btn-md btn-danger" href="/reset" role="button">Reset</a>
           </p>
         </div>
