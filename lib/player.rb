@@ -56,7 +56,8 @@ class Player
     {ip: ip, name: name, score: score}
   end
   
-  def get_move armies
+  def get_move players
+    armies = players.map(&:score).join(',')
     response = HTTParty.post("http://#{ip}:6001/move", body: {armies: armies, soldiers: score}, timeout: 5)
     data = JSON.parse(response.body)
 

@@ -8,8 +8,7 @@ class Game
   def play
     playing = alive
     
-    count = playing.size
-    playing.each{|p| p.get_move(count)}
+    playing.each{|p| p.get_move(players)}
     
     by_bet = playing.sort_by{|p| 0-p.move}
     winner = by_bet[0]
