@@ -15,9 +15,14 @@ get '/' do
   erb :index
 end
 
-post '/play' do
+get '/play' do
   @results = settings.game.play
   erb :index, locals: {results: @results}
+end
+
+get '/reset' do
+  settings.game = Game.new(Player.locate)
+  redirect to('/')
 end
 
 get '/players' do
