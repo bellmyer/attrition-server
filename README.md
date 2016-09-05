@@ -1,6 +1,6 @@
 # Attrition
 
-Attrition is a simple client/server based game to demonstrate how systems 
+*Attrition* is a simple client/server based game to demonstrate how systems 
 on a network can collaborate with each other via API calls. If an
 [Attrition Player](https://github.com/rubycuts/attrition-player)
 is running on the local network, then all you need to do is fire up the game server like so:
