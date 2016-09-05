@@ -20,6 +20,10 @@ class BetAll
     soldiers
   end
   
+  def move
+    moves.last
+  end
+  
   def increment soldiers
     @score += soldiers
   end

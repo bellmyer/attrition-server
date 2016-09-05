@@ -6,8 +6,22 @@ class Game
   end
   
   def play
-    count = alive.size
-    alive.each{|p| p.get_move(count)}
+    playing = alive
+    
+    count = playing.size
+    playing.each{|p| p.get_move(count)}
+    
+    by_bet = playing.sort_by{|p| 0-p.move}
+    winner = by_bet[0]
+    
+    remaining = winner.move - by_bet[1].move
+
+    bonus = remaining
+    by_bet[1..-1].each do |player|
+      bonus += [remaining, player.move].min
+    end
+    
+    winner.increment(bonus)
   end
   
   def sorted
