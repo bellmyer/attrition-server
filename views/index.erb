@@ -12,7 +12,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1><a href="/">Attrition</a></h1>
+          <h1>
+            <a href="/">Attrition</a> - 
+            <% if settings.game.round == 0 %>
+              The Calm Before the Storm
+            <% else %>
+              Round <%= settings.game.round %>
+            <% end %>
+          </h1>
   
           <table class="table table-striped">
           <thead>
@@ -21,7 +28,7 @@
               <th>Player</th>
               <th>Last Move</th>
               <th>Soldiers Remaining</th>
-              <th>Turns Survived</th>
+              <th>Rounds Survived</th>
             </tr>
           </thead>
           <tbody>

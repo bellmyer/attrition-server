@@ -23,6 +23,10 @@ class Game
     winner.increment(bonus)
   end
   
+  def round
+    players.first.moves.size
+  end
+  
   def sorted
     players.sort_by{|p| 0-p.moves.size}.sort_by{|p| 0-p.score}
   end
