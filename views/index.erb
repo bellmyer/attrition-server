@@ -26,9 +26,9 @@
             <tr>
               <th>Rank</th>
               <th>Player</th>
-              <th>Last Move</th>
-              <th>Soldiers Remaining</th>
-              <th>Rounds Survived</th>
+              <th class="text-right">Last Move</th>
+              <th class="text-right">Soldiers Remaining</th>
+              <th class="text-right">Rounds Survived</th>
             </tr>
           </thead>
           <tbody>
@@ -36,9 +36,9 @@
               <tr>
                 <td><%= i + 1 %>.</td>
                 <td><%= player.name %></td>
-                <td><%= player.moves.last %></td>
-                <td><%= player.score %></td>
-                <td><%= player.moves.size %></td>
+                <td class="text-right"><%= player.moves.last %></td>
+                <td class="text-right"><%= player.score %></td>
+                <td class="text-right"><%= player.moves.size %></td>
               </tr>
             <% end %>
           </tbody>
