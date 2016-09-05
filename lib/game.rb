@@ -7,8 +7,9 @@ class Game
   
   def play
     playing = alive
+    armies = players.map(&:score)
     
-    playing.each{|p| p.get_move(players)}
+    playing.each{|p| p.get_move(armies)}
     
     by_bet = playing.sort_by{|p| 0-p.move}
     winner = by_bet[0]
