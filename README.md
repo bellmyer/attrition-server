@@ -24,8 +24,8 @@ has just a few simple principles:
 
 ### 1. Armies Decide How Many Soldiers to "Wager" in Battle
 
-Each Army Begins the game with 100 Soldiers. For each battle, the general must decide how many
-soldiers to send - at least one. The general only knows the total size of each of the other armies, but
+Each army begins the game with 100 soldiers. For each battle, the Player object must decide how many
+soldiers to send - at least one. The Player object only knows the total size of each of the other armies, but
 not how many soldiers the other armies plan to send into battle.
 
 ### 2. Losses are Equal on All Sides
