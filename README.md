@@ -60,3 +60,23 @@ out of soldiers.
 
 ![Attrition](https://github.com/rubycuts/attrition-player/blob/master/public/attrition.png?raw=true)
 
+## Under the Hood
+
+*Attrition* server and players are all [Sinatra](http://sinatrarb.com) apps built in Ruby. They
+communicate over a local network via API calls which return JSON. 
+
+The server finds players by first find its own local, 192-based IP address. This might be 
+something like 192.168.1.5. Then it pings every IP address in the last-byte subnet - ie,
+192.168.1.1 - 192.168.1.255. It looks for a server on port 6001 that responds to the "/ping"
+route. If successful, the IP address and provided player name will be saved.
+
+Once the game begins, the server will make a "/move" request to each player, supplying the
+parameters listed above. The player will respond with its next "wager". The server ensures
+that the response falls within the allow range (no fewer than 1, no more than the player has
+available).
+
+The client/server architecture prevents players from "hacking" the server classes or
+other player classes. It also allows each programmer to code their own solution, and 
+participate in the game without having to submit their code to a central location.
+
+This basic platform can be used for countless programmable games and variations.
