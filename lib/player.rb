@@ -57,7 +57,7 @@ class Player
   end
   
   def get_move armies
-    response = HTTParty.post("http://#{ip}:6001/move", body: {armies: armies.join(','), soldiers: score}, timeout: 5)
+    response = HTTParty.post("http://#{ip}:6001/move", body: {armies: armies, soldiers: score}.to_json, timeout: 5)
     data = JSON.parse(response.body)
 
     soldiers = [[data['soldiers'], 1].max, score].min

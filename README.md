@@ -84,6 +84,6 @@ as they conform to the same API protocols:
 
 * bind to port 6001
 * accept the request "GET /ping", and return JSON like `{status: 'success', name: 'Some Name'}`
-* accept requests like "GET /move?armies=100,20,10&soldiers=50" and return JSON like `{status: 'success', soldiers: 10}`
+* accept requests like "POST /move" with a JSON payload like `{armies: [100,20,10], soldiers: 50}` and return JSON like `{status: 'success', soldiers: 10}`
 
 This basic platform can be used for countless programmable games and variations.
